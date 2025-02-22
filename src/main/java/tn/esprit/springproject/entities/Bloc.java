@@ -1,11 +1,12 @@
 package tn.esprit.springproject.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
 
 @Entity
 @Getter
@@ -17,4 +18,10 @@ public class Bloc {
     private int idBloc;
     private String nomBloc;
     private long capaciteBloc;
+
+    @ManyToOne
+    Foyer foyer;
+
+    @OneToMany
+    private List<Chambre> chambres;
 }

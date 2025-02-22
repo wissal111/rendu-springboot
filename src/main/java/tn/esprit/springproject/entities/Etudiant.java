@@ -2,12 +2,14 @@ package tn.esprit.springproject.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Getter
@@ -22,4 +24,7 @@ public class Etudiant {
     private long cin;
     private String ecole;
     private Date dateNaissance;
+
+    @ManyToMany(mappedBy = "etudiant")
+    private List<Reservation> reservations;
 }
