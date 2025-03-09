@@ -25,6 +25,6 @@ public class Etudiant {
     private String ecole;
     private Date dateNaissance;
 
-    @ManyToMany(mappedBy = "etudiant")
+    @ManyToMany
     private List<Reservation> reservations;
 }

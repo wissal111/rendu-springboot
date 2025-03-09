@@ -3,6 +3,7 @@ package tn.esprit.springproject.entities;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,6 +24,9 @@ public class Reservation {
     private boolean estValide;
 
     @ManyToMany
-    private List<Etudiant> etudiants;
+    private List<Etudiant> Etudiants;
+    @ManyToOne
+    private Chambre chambre;
+
 
 }

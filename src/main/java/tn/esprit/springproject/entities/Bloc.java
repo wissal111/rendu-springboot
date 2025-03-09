@@ -22,6 +22,6 @@ public class Bloc {
     @ManyToOne
     Foyer foyer;
 
-    @OneToMany
+    @OneToMany(mappedBy = "bloc")
     private List<Chambre> chambres;
 }
